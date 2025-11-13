@@ -1,10 +1,15 @@
 {
   "name": "azor-icons",
   "description": "A collection of React icon components for Azor",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CFBD-SAC/azor-icons.git"
+  },
+  "homepage": "https://github.com/CFBD-SAC/azor-icons#readme",
   "files": [
     "dist"
   ],
