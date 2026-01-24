@@ -14,7 +14,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "svgr --template scripts/svgr-template.js --typescript --svg-props fill=currentColor --svg-props width={props.size} --svg-props height={props.size} --replace-attr-values '#000=currentColor' --replace-attr-values 'black=currentColor' --out-dir src/icons src/raw-icons --no-index && node scripts/generate-index.js && tsc",
+    "build": "svgr --template scripts/svgr-template.js --typescript --svg-props fill=currentColor --svg-props width={props.size} --svg-props height={props.size} --replace-attr-values '#000=currentColor' --replace-attr-values 'black=currentColor' --out-dir src/icons src/raw-icons --no-index && svgr --native --template scripts/svgr-native-template.js --svgo-config scripts/svgo-native.config.js --typescript --svg-props fill=currentColor --svg-props width={props.size} --svg-props height={props.size} --replace-attr-values '#000=currentColor' --replace-attr-values 'black=currentColor' --out-dir src/native-icons src/raw-icons --no-index && node scripts/generate-index.js && tsc",
     "prepublishOnly": "npm run build"
   },
   "keywords": [
@@ -29,12 +29,14 @@
   "author": "Franco Chipana",
   "license": "MIT",
   "peerDependencies": {
-    "react": ">=17"
+    "react": ">=17",
+    "react-native-svg": "*"
   },
   "devDependencies": {
     "@svgr/cli": "^8.1.0",
     "@types/react": "^19.2.4",
     "@types/react-dom": "^19.2.3",
+    "react-native-svg": "^15.11.1",
     "typescript": "^5.9.3"
   }
 }
