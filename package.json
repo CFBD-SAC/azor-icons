@@ -13,6 +13,18 @@
   "files": [
     "dist"
   ],
+  "exports": {
+    "./react": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    },
+    "./react-native": {
+      "types": "./dist/index.native.d.ts",
+      "import": "./dist/index.native.js",
+      "require": "./dist/index.native.js"
+    }
+  },
   "scripts": {
     "build": "svgr --template scripts/svgr-template.js --typescript --svg-props fill=currentColor --svg-props width={props.size} --svg-props height={props.size} --replace-attr-values '#000=currentColor' --replace-attr-values 'black=currentColor' --out-dir src/icons src/raw-icons --no-index && svgr --native --template scripts/svgr-native-template.js --svgo-config scripts/svgo-native.config.js --typescript --svg-props fill=currentColor --svg-props width={props.size} --svg-props height={props.size} --replace-attr-values '#000=currentColor' --replace-attr-values 'black=currentColor' --out-dir src/native-icons src/raw-icons --no-index && node scripts/generate-index.js && tsc",
     "prepublishOnly": "npm run build"
