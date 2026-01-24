@@ -1,7 +1,7 @@
 {
   "name": "azor-icons",
   "description": "A collection of React icon components for Azor",
-  "version": "1.0.3",
+  "version": "1.2.0",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
